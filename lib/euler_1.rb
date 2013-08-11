@@ -3,8 +3,15 @@
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 =end
+class Euler01
 
-class Prime
+  def find_multiples_of_3_or_5_up_to(max_number)
+    (1...max_number).select{|number| number % 3 == 0 || number % 5 == 0}
+  end
 
+  def sum_multiples_of_3_or_5_up_to(max_number)
+    multiples = find_multiples_of_3_or_5_up_to(max_number)
+    multiples.inject(0) { |result, multiple| result += multiple}
+  end
 end
 

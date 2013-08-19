@@ -3,6 +3,7 @@
             "Issac Newton" => "Chickens at rest tend to stay at rest. Chickens in motion tend to cross the road.",
             "The Chicken" => "To learn web development at Maker Square"
 }
+@count = 0
 
 puts "What would you like to do?"
 puts "-- Type 'a' to add a new answer."
@@ -12,12 +13,12 @@ puts "-- Type 'd' to delete an answer."
 puts "-- Type 'q' to quit."
 
 def run
-  action = ""
-  while action != "q"
-    puts ""
 
-    action = gets.chomp.downcase
-    case action
+  while @action != "q"
+    puts " enter a valid command, a, u, s, d, q"
+    @action = gets.chomp.downcase
+    puts
+    case @action
       when 'a'
         puts "What answer do you want to add?"
         answer = gets.chomp
